@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BgBlue: #20224B;
+    --BgPurple: #442944;
+    --BgDark: #161735;
+    --BgLight: #fff;
+    --TextBlue: #0090B0;
+    --TextLight: #fff;
+    --TextBlack: #000;
+    --CardLight: #FCFCFC;
+}
+
+body {
+    font: 24pt 'Comfortaa', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: linear-gradient(to bottom, var(--BgBlue), var(--BgPurple));
+    background-position: center;
+    color: var(--TextBlack);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#container {
+    width: 25%;
+    margin: 0px auto;
+    padding: 20px;
+    background: var(--CardLight);
+    border-radius: 30px;
+    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.663);
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+
+
+
+/* LAYOUT */
+#topo {
+    width: 100%;
+    height: 25vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#conteudo {
+    width: 100%;
+    height: 55vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+/* CONTEÚDO */
+#modo {
+    text-align: right;
+    display: block;
+    font-size: 26pt;
+    cursor: pointer;
+}
+
+#imagem {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    border-radius: 50%;
+    text-indent: -9999px;
+    background: url(../imagens/dave.jpg) no-repeat center;
+    background-size: cover;
+    border: 1px solid #20224B;
+}
+
+#nome {
+    line-height: 15px;
+}
+
+#nome>h1 {
+    font: 1.3em 'Comfortaa', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, cursive;
+    font-weight: 400;
+}
+
+#nome>span {
+    font-size: 12pt;
+    color: var(--TextBlack);
+    padding: 0;
+}
+
+#contatos {
+    width: 100%
+}
+
+#contatos ul li {
+    padding: 15px;
+}
+
+#contatos ul a {
+    font-size: .7em;
+    font-weight: 400;
+    line-height: 2em;
+    color: var(--TextLight);
+    background: var(--BgDark);
+    border-radius: 20px;
+    display: block;
+    box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.427);
+    transition: .3s ease-in-out;
+}
+
+#contatos ul a:hover {
+    color: var(--TextBlack);
+    background: var(--BgLight);
+}
+
+
+
+/* TEMA DARK */
+#container.dark {
+    background: var(--BgDark);
+    color: var(--TextLight);
+}
+
+#container.dark #night::before {
+    content: "\F1D2";
+}
+
+#container.dark #contatos ul a {
+    background: var(--CardLight);
+    color: var(--TextBlack);
+}
+
+#container.dark #contatos ul a:hover {
+    background: var(--BgDark);
+    color: var(--TextLight);
+}
+#container.dark #nome>span {
+    color: var(--TextLight);
+}
+
+
+
+
+/* RESPONSIVIDADE */
+@media only screen and (max-width: 1300px){
+    #container {
+        width: 30%;
+        height: 95vh;
+        font-size: 18pt;
+    }
+
+    #topo{
+        width: 100%;
+        height: 25vh;
+        margin-bottom: 30px;
+    }   
+
+    #modo {
+        font-size: 22pt;
+    }
+
+    #imagem {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    #nome span {
+        font-size: 14px;
+    }
+
+    #contatos ul li {
+        padding: 10px;
+    }
+
+    #contatos ul a {
+        padding: 2px;
+        box-shadow: 10px 5px 20px #693a681a;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #container {
+        width: 80%;
+        height: 90vh;
+        font-size: 22pt;
+    }
+
+    #topo{
+        width: 100%;
+        height: 25vh;
+        margin-bottom: 10px;
+    }  
+
+    #modo {
+        font-size: 24pt;
+    } 
+
+    #imagem {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    #nome span {
+        font-size: 14px;
+    }
+
+    #contatos ul li {
+        padding: 10px;
+    }
+
+    #contatos ul a {
+        padding: 5px;
+        box-shadow: 10px 5px 20px #693a681a;
+    }
+}
